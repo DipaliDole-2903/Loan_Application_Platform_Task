@@ -1,4 +1,4 @@
-// Shared TypeScript types for the CredNova platform
+// Shared TypeScript types for the Fincera platform
 
 export interface User {
   id: string

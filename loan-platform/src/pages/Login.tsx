@@ -1,0 +1,178 @@
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { Mail, Phone, ArrowRight, Eye, EyeOff } from 'lucide-react'
+
+export default function Login() {
+  const navigate = useNavigate()
+  const [form, setForm] = useState({ email: '', mobile: '' })
+  const [errors, setErrors] = useState<{ email?: string; mobile?: string }>({})
+  const [showMobile, setShowMobile] = useState(false)
+
+  const validate = () => {
+    const newErrors: { email?: string; mobile?: string } = {}
+    if (!form.email) newErrors.email = 'Email is required'
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) newErrors.email = 'Enter a valid email address'
+    if (!form.mobile) newErrors.mobile = 'Mobile number is required'
+    else if (!/^\d{10}$/.test(form.mobile)) newErrors.mobile = 'Enter a valid 10-digit mobile number'
+    setErrors(newErrors)
+    return Object.keys(newErrors).length === 0
+  }
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    if (validate()) navigate('/home')
+  }
+
+  return (
+    <div className="min-h-screen flex relative overflow-hidden" id="login-page">
+      {/* Left Panel */}
+      <div
+        className="hidden lg:flex lg:w-1/2 flex-col justify-center items-center p-12 relative"
+        style={{ background: 'linear-gradient(135deg, #0F4C81 0%, #1a6ab1 55%, #1FA971 100%)' }}
+      >
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          {[...Array(5)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute rounded-full"
+              style={{
+                background: 'rgba(255,255,255,0.06)',
+                width: `${100 + i * 60}px`,
+                height: `${100 + i * 60}px`,
+                bottom: `${5 + i * 10}%`,
+                right: `${-10 + i * 15}%`,
+              }}
+            />
+          ))}
+        </div>
+        <div className="relative text-center text-white animate-fade-in">
+          <div
+            className="w-20 h-20 rounded-2xl flex items-center justify-center text-white font-bold text-3xl shadow-2xl mx-auto mb-8"
+            style={{ background: 'rgba(255,255,255,0.2)', backdropFilter: 'blur(12px)', border: '1px solid rgba(255,255,255,0.3)' }}
+          >
+            F
+          </div>
+          <h2 className="text-4xl font-bold mb-4">Welcome Back!</h2>
+          <p className="text-white/70 text-lg leading-relaxed max-w-xs mx-auto">
+            Your smarter lending journey continues. Get instant loans, track credit & more.
+          </p>
+          <div className="mt-10 grid grid-cols-3 gap-4 stagger-children">
+            {[
+              { value: '2M+', label: 'Happy Customers' },
+              { value: '₹500Cr', label: 'Disbursed' },
+              { value: '4.8★', label: 'App Rating' },
+            ].map((stat) => (
+              <div
+                key={stat.label}
+                className="rounded-2xl p-4 text-center animate-fade-in"
+                style={{ background: 'rgba(255,255,255,0.12)', backdropFilter: 'blur(8px)' }}
+              >
+                <div className="font-bold text-xl">{stat.value}</div>
+                <div className="text-white/60 text-xs mt-1">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Right Panel - Form */}
+      <div className="w-full lg:w-1/2 flex flex-col justify-center items-center p-6 md:p-12" style={{ background: 'var(--color-bg)' }}>
+        <div className="w-full max-w-md animate-slide-up">
+          {/* Mobile Logo */}
+          <div className="flex items-center gap-2 mb-8 lg:hidden">
+            <div
+              className="w-9 h-9 rounded-xl flex items-center justify-center text-white font-bold text-lg"
+              style={{ background: 'linear-gradient(135deg, #0F4C81, #1FA971)' }}
+            >F</div>
+            <span className="font-bold text-xl" style={{ color: 'var(--color-primary)' }}>
+              Fin<span style={{ color: 'var(--color-secondary)' }}>cera</span>
+            </span>
+          </div>
+
+          <h1 className="text-3xl font-bold mb-2" style={{ color: 'var(--color-text)' }}>Sign In</h1>
+          <p className="mb-8 text-sm" style={{ color: 'var(--color-text-muted)' }}>
+            Enter your details to continue to your dashboard
+          </p>
+
+          <form onSubmit={handleSubmit} id="login-form" className="space-y-5">
+            {/* Email */}
+            <div>
+              <label htmlFor="login-email" className="block text-sm font-medium mb-1.5" style={{ color: 'var(--color-text)' }}>
+                Email Address
+              </label>
+              <div className="relative">
+                <Mail size={18} className="absolute left-4 top-1/2 -translate-y-1/2" style={{ color: 'var(--color-text-muted)' }} />
+                <input
+                  id="login-email"
+                  type="email"
+                  placeholder="you@example.com"
+                  value={form.email}
+                  onChange={(e) => setForm({ ...form, email: e.target.value })}
+                  className={`input-field pl-11 ${errors.email ? 'error' : ''}`}
+                />
+              </div>
+              {errors.email && (
+                <p className="mt-1.5 text-xs" style={{ color: 'var(--color-error)' }}>{errors.email}</p>
+              )}
+            </div>
+
+            {/* Mobile */}
+            <div>
+              <label htmlFor="login-mobile" className="block text-sm font-medium mb-1.5" style={{ color: 'var(--color-text)' }}>
+                Mobile Number
+              </label>
+              <div className="relative">
+                <Phone size={18} className="absolute left-4 top-1/2 -translate-y-1/2" style={{ color: 'var(--color-text-muted)' }} />
+                <input
+                  id="login-mobile"
+                  type={showMobile ? 'text' : 'password'}
+                  placeholder="10-digit mobile number"
+                  value={form.mobile}
+                  onChange={(e) => setForm({ ...form, mobile: e.target.value.replace(/\D/g, '').slice(0, 10) })}
+                  className={`input-field pl-11 pr-11 ${errors.mobile ? 'error' : ''}`}
+                />
+                <button
+                  type="button"
+                  id="login-toggle-mobile"
+                  onClick={() => setShowMobile(!showMobile)}
+                  className="absolute right-4 top-1/2 -translate-y-1/2"
+                  style={{ color: 'var(--color-text-muted)' }}
+                >
+                  {showMobile ? <EyeOff size={16} /> : <Eye size={16} />}
+                </button>
+              </div>
+              {errors.mobile && (
+                <p className="mt-1.5 text-xs" style={{ color: 'var(--color-error)' }}>{errors.mobile}</p>
+              )}
+            </div>
+
+            {/* Terms */}
+            <div className="flex items-start gap-3">
+              <input
+                type="checkbox"
+                id="login-terms"
+                className="mt-1 accent-blue-700"
+                required
+              />
+              <label htmlFor="login-terms" className="text-xs leading-relaxed" style={{ color: 'var(--color-text-muted)' }}>
+                I agree to the{' '}
+                <a href="/terms" className="font-medium" style={{ color: 'var(--color-primary)' }}>Terms & Conditions</a>
+                {' '}and{' '}
+                <a href="/privacy-policy" className="font-medium" style={{ color: 'var(--color-primary)' }}>Privacy Policy</a>
+              </label>
+            </div>
+
+            <button
+              id="login-submit-btn"
+              type="submit"
+              className="btn btn-primary btn-lg w-full"
+            >
+              Continue
+              <ArrowRight size={18} />
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  )
+}

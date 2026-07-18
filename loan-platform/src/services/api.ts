@@ -2,7 +2,7 @@ import axios from 'axios'
 
 // Base Axios instance – ready for future API integration
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL || 'https://api.crednova.in/v1',
+  baseURL: import.meta.env.VITE_API_BASE_URL || 'https://api.fincera.in/v1',
   timeout: 10000,
   headers: {
     'Content-Type': 'application/json',
@@ -11,7 +11,7 @@ const api = axios.create({
 
 // Request interceptor – attach auth token if available
 api.interceptors.request.use((config) => {
-  const token = localStorage.getItem('crednova_token')
+  const token = localStorage.getItem('fincera_token')
   if (token) {
     config.headers.Authorization = `Bearer ${token}`
   }
@@ -23,7 +23,7 @@ api.interceptors.response.use(
   (response) => response,
   (error) => {
     if (error.response?.status === 401) {
-      localStorage.removeItem('crednova_token')
+      localStorage.removeItem('fincera_token')
       window.location.href = '/login'
     }
     return Promise.reject(error)

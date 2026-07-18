@@ -44,21 +44,21 @@ export default function Terms() {
 
   return (
     <div id="terms-page" className="animate-fade-in">
-      <section className="py-20" style={{ background: 'linear-gradient(135deg, #1FA971, #27c484)' }}>
+      <section className="py-24 md:py-32" style={{ background: 'linear-gradient(135deg, #1FA971, #27c484)' }}>
         <div className="section-wrapper text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Terms & Conditions</h1>
           <p className="text-white/70">Last updated: 1 July 2026</p>
         </div>
       </section>
 
-      <section className="py-16">
+      <section className="py-20 md:py-24">
         <div className="section-wrapper max-w-4xl mx-auto">
           <p className="text-sm mb-10 leading-relaxed" style={{ color: 'var(--color-text-muted)' }}>
             Please read these Terms & Conditions carefully before using the Fincera platform. These terms constitute a legally binding agreement between you and Fincera Financial Services.
           </p>
           <div className="space-y-6">
             {sections.map((s) => (
-              <div key={s.title} id={`terms-${s.title.split('.')[0].trim()}`} className="card p-6">
+              <div key={s.title} id={`terms-${s.title.split('.')[0].trim()}`} className="card p-8 md:p-10">
                 <h2 className="text-lg font-semibold mb-3">{s.title}</h2>
                 <p className="text-sm leading-relaxed" style={{ color: 'var(--color-text-muted)' }}>{s.content}</p>
               </div>

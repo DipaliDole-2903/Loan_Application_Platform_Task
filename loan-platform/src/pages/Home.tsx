@@ -22,7 +22,7 @@ export default function Home() {
       {/* Hero Banner */}
       <section
         id="home-hero"
-        className="relative overflow-hidden py-20 md:py-32"
+        className="relative overflow-hidden py-24 md:py-40"
         style={{ background: 'linear-gradient(135deg, #0F4C81 0%, #1a6ab1 45%, #1FA971 100%)' }}
       >
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -42,7 +42,7 @@ export default function Home() {
             <p className="text-white/80 text-lg mb-10 max-w-lg animate-slide-up" style={{ animationDelay: '100ms' }}>
               Get instant personal & business loans at competitive rates. Minimal paperwork. Maximum trust.
             </p>
-            <div className="flex flex-wrap gap-4 animate-slide-up stagger-children">
+            <div className="flex flex-wrap gap-6 animate-slide-up stagger-children">
               <button id="home-apply-personal-btn" onClick={() => navigate('/personal-loan')} className="btn btn-accent btn-lg">
                 Apply for Personal Loan <ArrowRight size={18} />
               </button>
@@ -55,9 +55,9 @@ export default function Home() {
       </section>
 
       {/* Stats Bar */}
-      <section id="home-stats" className="py-8" style={{ background: 'var(--color-surface)' }}>
+      <section id="home-stats" className="py-12 md:py-16" style={{ background: 'var(--color-surface)' }}>
         <div className="section-wrapper">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 text-center">
             {[
               { value: '2M+', label: 'Happy Customers' },
               { value: '₹500Cr+', label: 'Total Disbursed' },
@@ -74,18 +74,18 @@ export default function Home() {
       </section>
 
       {/* Loan Products */}
-      <section id="home-loan-products" className="py-16">
+      <section id="home-loan-products" className="py-20 md:py-28">
         <div className="section-wrapper">
-          <div className="text-center mb-12">
+          <div className="text-center mb-16 md:mb-20">
             <h2 className="text-3xl md:text-4xl font-bold mb-3" style={{ color: 'var(--color-text)' }}>Our Loan Products</h2>
             <p style={{ color: 'var(--color-text-muted)' }}>Choose the right financial solution for your needs</p>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 stagger-children">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 stagger-children">
             {loanProducts.map((loan) => (
               <div
                 key={loan.id}
                 id={`loan-card-${loan.id}`}
-                className="card p-6 cursor-pointer animate-fade-in"
+                className="card p-8 cursor-pointer animate-fade-in"
                 onClick={() => navigate(loan.type === 'personal' ? '/personal-loan' : '/business-loan')}
               >
                 <div className="text-4xl mb-4">{loan.icon}</div>
@@ -117,13 +117,13 @@ export default function Home() {
       </section>
 
       {/* Other Services */}
-      <section id="home-services" className="py-16" style={{ background: 'var(--color-surface)' }}>
+      <section id="home-services" className="py-20 md:py-28" style={{ background: 'var(--color-surface)' }}>
         <div className="section-wrapper">
-          <div className="text-center mb-12">
+          <div className="text-center mb-16 md:mb-20">
             <h2 className="text-3xl font-bold mb-3">Other Services</h2>
             <p style={{ color: 'var(--color-text-muted)' }}>Everything you need for your financial health</p>
           </div>
-          <div className="grid sm:grid-cols-3 gap-6 stagger-children">
+          <div className="grid sm:grid-cols-3 gap-8 lg:gap-10 stagger-children">
             {services.map((svc) => (
               <div
                 key={svc.title}
@@ -146,14 +146,14 @@ export default function Home() {
       </section>
 
       {/* Testimonials */}
-      <section id="home-testimonials" className="py-16">
+      <section id="home-testimonials" className="py-20 md:py-28">
         <div className="section-wrapper">
-          <div className="text-center mb-12">
+          <div className="text-center mb-16 md:mb-20">
             <h2 className="text-3xl font-bold mb-3">What Our Customers Say</h2>
           </div>
-          <div className="grid sm:grid-cols-3 gap-6 stagger-children">
+          <div className="grid sm:grid-cols-3 gap-8 lg:gap-10 stagger-children">
             {testimonials.map((t, i) => (
-              <div key={i} id={`testimonial-${i}`} className="card p-6 animate-fade-in">
+              <div key={i} id={`testimonial-${i}`} className="card p-8 md:p-10 animate-fade-in">
                 <div className="flex gap-1 mb-4">
                   {[...Array(t.rating)].map((_, si) => (
                     <Star key={si} size={16} fill="#F5A623" style={{ color: '#F5A623' }} />
@@ -179,7 +179,7 @@ export default function Home() {
       </section>
 
       {/* CTA Banner */}
-      <section id="home-cta" className="py-16" style={{ background: 'linear-gradient(135deg, #0F4C81, #1FA971)' }}>
+      <section id="home-cta" className="py-20 md:py-28" style={{ background: 'linear-gradient(135deg, #0F4C81, #1FA971)' }}>
         <div className="section-wrapper text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Ready to Get Started?</h2>
           <p className="text-white/70 mb-8 text-lg">Join 2 million+ Indians who trust Fincera for their financial needs.</p>

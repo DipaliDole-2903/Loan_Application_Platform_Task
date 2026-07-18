@@ -51,7 +51,7 @@ export default function Header() {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-1" id="desktop-nav">
+          <nav className="hidden md:flex items-center gap-4 lg:gap-8" id="desktop-nav">
             {navLinks.map((item) =>
               item.children ? (
                 <div key={item.label} className="relative">

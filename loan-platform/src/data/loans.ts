@@ -22,7 +22,7 @@ export const loanProducts: LoanProduct[] = [
     tenure: 'Up to 5 Years',
     icon: '👤',
     badge: 'Most Popular',
-    color: '#0F4C81',
+    color: '#81780fff',
   },
   {
     id: 'pl-002',

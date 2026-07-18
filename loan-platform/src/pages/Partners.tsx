@@ -15,7 +15,7 @@ export default function Partners() {
   return (
     <div id="partners-page" className="animate-fade-in">
       {/* Hero */}
-      <section className="py-20" style={{ background: 'linear-gradient(135deg, #0F4C81, #1FA971)' }}>
+      <section className="py-24 md:py-32" style={{ background: 'linear-gradient(135deg, #0F4C81, #1FA971)' }}>
         <div className="section-wrapper text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Our Partners</h1>
           <p className="text-white/70 text-lg max-w-xl mx-auto">
@@ -25,7 +25,7 @@ export default function Partners() {
       </section>
 
       {/* Tabs + Cards */}
-      <section className="py-16">
+      <section className="py-20 md:py-24">
         <div className="section-wrapper">
           {/* Tab Bar */}
           <div className="flex gap-2 mb-10 overflow-x-auto pb-1" id="partners-tabs">
@@ -47,12 +47,12 @@ export default function Partners() {
           </div>
 
           {/* Partner Cards */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 stagger-children" id="partners-grid">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 stagger-children" id="partners-grid">
             {filtered.map((partner) => (
               <div
                 key={partner.id}
                 id={`partner-card-${partner.id}`}
-                className="card p-6 text-center animate-fade-in"
+                className="card p-8 text-center animate-fade-in"
               >
                 <div
                   className="w-16 h-16 rounded-2xl flex items-center justify-center text-3xl mx-auto mb-4"

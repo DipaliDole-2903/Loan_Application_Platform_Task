@@ -90,14 +90,14 @@ export default function Login() {
           </div>
 
           <h1 className="text-3xl font-bold mb-2" style={{ color: 'var(--color-text)' }}>Sign In</h1>
-          <p className="mb-8 text-sm" style={{ color: 'var(--color-text-muted)' }}>
+          <p className="mb-10 text-sm" style={{ color: 'var(--color-text-muted)' }}>
             Enter your details to continue to your dashboard
           </p>
 
-          <form onSubmit={handleSubmit} id="login-form" className="space-y-5">
+          <form onSubmit={handleSubmit} id="login-form" className="space-y-6">
             {/* Email */}
             <div>
-              <label htmlFor="login-email" className="block text-sm font-medium mb-1.5" style={{ color: 'var(--color-text)' }}>
+              <label htmlFor="login-email" className="block text-sm font-medium mb-2" style={{ color: 'var(--color-text)' }}>
                 Email Address
               </label>
               <div className="relative">
@@ -108,57 +108,48 @@ export default function Login() {
                   placeholder="you@example.com"
                   value={form.email}
                   onChange={(e) => setForm({ ...form, email: e.target.value })}
-                  className={`input-field pl-11 ${errors.email ? 'error' : ''}`}
+                  className={`input-field !pl-11 ${errors.email ? 'error' : ''}`}
                 />
               </div>
               {errors.email && (
-                <p className="mt-1.5 text-xs" style={{ color: 'var(--color-error)' }}>{errors.email}</p>
+                <p className="mt-1.5 text-xs font-medium" style={{ color: 'var(--color-error)' }}>{errors.email}</p>
               )}
             </div>
 
             {/* Mobile */}
             <div>
-              <label htmlFor="login-mobile" className="block text-sm font-medium mb-1.5" style={{ color: 'var(--color-text)' }}>
+              <label htmlFor="login-mobile" className="block text-sm font-medium mb-2" style={{ color: 'var(--color-text)' }}>
                 Mobile Number
               </label>
               <div className="relative">
                 <Phone size={18} className="absolute left-4 top-1/2 -translate-y-1/2" style={{ color: 'var(--color-text-muted)' }} />
                 <input
                   id="login-mobile"
-                  type={showMobile ? 'text' : 'password'}
+                  type="tel"
                   placeholder="10-digit mobile number"
                   value={form.mobile}
                   onChange={(e) => setForm({ ...form, mobile: e.target.value.replace(/\D/g, '').slice(0, 10) })}
-                  className={`input-field pl-11 pr-11 ${errors.mobile ? 'error' : ''}`}
+                  className={`input-field !pl-11 ${errors.mobile ? 'error' : ''}`}
                 />
-                <button
-                  type="button"
-                  id="login-toggle-mobile"
-                  onClick={() => setShowMobile(!showMobile)}
-                  className="absolute right-4 top-1/2 -translate-y-1/2"
-                  style={{ color: 'var(--color-text-muted)' }}
-                >
-                  {showMobile ? <EyeOff size={16} /> : <Eye size={16} />}
-                </button>
               </div>
               {errors.mobile && (
-                <p className="mt-1.5 text-xs" style={{ color: 'var(--color-error)' }}>{errors.mobile}</p>
+                <p className="mt-1.5 text-xs font-medium" style={{ color: 'var(--color-error)' }}>{errors.mobile}</p>
               )}
             </div>
 
             {/* Terms */}
-            <div className="flex items-start gap-3">
+            <div className="flex items-start gap-3 pt-2">
               <input
                 type="checkbox"
                 id="login-terms"
-                className="mt-1 accent-blue-700"
+                className="mt-1 accent-blue-700 w-4 h-4 rounded border-gray-300"
                 required
               />
-              <label htmlFor="login-terms" className="text-xs leading-relaxed" style={{ color: 'var(--color-text-muted)' }}>
+              <label htmlFor="login-terms" className="text-sm leading-relaxed" style={{ color: 'var(--color-text-muted)' }}>
                 I agree to the{' '}
-                <a href="/terms" className="font-medium" style={{ color: 'var(--color-primary)' }}>Terms & Conditions</a>
+                <a href="/terms" className="font-semibold transition-colors hover:text-blue-800" style={{ color: 'var(--color-primary)' }}>Terms & Conditions</a>
                 {' '}and{' '}
-                <a href="/privacy-policy" className="font-medium" style={{ color: 'var(--color-primary)' }}>Privacy Policy</a>
+                <a href="/privacy-policy" className="font-semibold transition-colors hover:text-blue-800" style={{ color: 'var(--color-primary)' }}>Privacy Policy</a>
               </label>
             </div>
 

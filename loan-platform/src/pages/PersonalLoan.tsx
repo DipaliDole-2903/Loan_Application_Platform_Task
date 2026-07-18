@@ -32,7 +32,7 @@ export default function PersonalLoan() {
       {/* Hero Banner */}
       <section
         id="personal-loan-hero"
-        className="py-20 relative overflow-hidden"
+        className="py-24 md:py-32 relative overflow-hidden"
         style={{ background: 'linear-gradient(135deg, #0F4C81, #1a6ab1)' }}
       >
         <div className="section-wrapper">
@@ -52,12 +52,12 @@ export default function PersonalLoan() {
       </section>
 
       {/* Benefits */}
-      <section id="personal-loan-benefits" className="py-16">
+      <section id="personal-loan-benefits" className="py-20 md:py-24">
         <div className="section-wrapper">
-          <h2 className="text-3xl font-bold text-center mb-12">Why Choose Fincera?</h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 stagger-children">
+          <h2 className="text-3xl font-bold text-center mb-16 md:mb-20">Why Choose Fincera?</h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 stagger-children">
             {loanBenefits.personal.map((b) => (
-              <div key={b.title} id={`benefit-${b.title.toLowerCase().replace(' ', '-')}`} className="card p-6 text-center animate-fade-in">
+              <div key={b.title} id={`benefit-${b.title.toLowerCase().replace(' ', '-')}`} className="card p-8 text-center animate-fade-in">
                 <div className="text-4xl mb-4">{b.icon}</div>
                 <h3 className="font-semibold mb-2">{b.title}</h3>
                 <p className="text-sm" style={{ color: 'var(--color-text-muted)' }}>{b.desc}</p>
@@ -68,7 +68,7 @@ export default function PersonalLoan() {
       </section>
 
       {/* Eligibility + Documents */}
-      <section id="personal-loan-eligibility" className="py-16" style={{ background: 'var(--color-surface)' }}>
+      <section id="personal-loan-eligibility" className="py-20 md:py-24" style={{ background: 'var(--color-surface)' }}>
         <div className="section-wrapper">
           <div className="grid md:grid-cols-2 gap-10">
             <div>
@@ -98,10 +98,10 @@ export default function PersonalLoan() {
       </section>
 
       {/* FAQs */}
-      <section id="personal-loan-faqs" className="py-16">
+      <section id="personal-loan-faqs" className="py-20 md:py-24">
         <div className="section-wrapper max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
-          <div className="card p-6">
+          <h2 className="text-3xl font-bold text-center mb-16 md:mb-20">Frequently Asked Questions</h2>
+          <div className="card p-8 md:p-10">
             {faqData.personal.map((faq, i) => (
               <FAQItem key={i} q={faq.q} a={faq.a} />
             ))}
@@ -110,7 +110,7 @@ export default function PersonalLoan() {
       </section>
 
       {/* CTA */}
-      <section className="py-16" style={{ background: 'var(--color-primary)' }}>
+      <section className="py-20 md:py-24" style={{ background: 'var(--color-primary)' }}>
         <div className="section-wrapper text-center">
           <h2 className="text-3xl font-bold text-white mb-4">Ready to Apply?</h2>
           <p className="text-white/70 mb-8">Quick, easy, transparent. Funds in your account within 2 hours.</p>

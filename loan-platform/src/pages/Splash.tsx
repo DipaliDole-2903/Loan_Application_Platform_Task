@@ -12,7 +12,7 @@ export default function Splash() {
   return (
     <div
       className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden"
-      style={{ background: 'linear-gradient(135deg, #0F4C81 0%, #1a6ab1 50%, #1FA971 100%)' }}
+      style={{ background: 'linear-gradient(135deg, #810f52ff 0%, #b11a1aff 50%, #1FA971 100%)' }}
       id="splash-screen"
     >
       {/* Animated background circles */}

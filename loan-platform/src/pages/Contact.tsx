@@ -27,14 +27,14 @@ export default function Contact() {
   return (
     <div id="contact-page" className="animate-fade-in">
       {/* Hero */}
-      <section className="py-20" style={{ background: 'linear-gradient(135deg, #0F4C81, #1FA971)' }}>
+      <section className="py-24 md:py-32" style={{ background: 'linear-gradient(135deg, #0F4C81, #1FA971)' }}>
         <div className="section-wrapper text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Contact Us</h1>
           <p className="text-white/70 text-lg">We'd love to hear from you. Our team is always ready to help.</p>
         </div>
       </section>
 
-      <section className="py-16">
+      <section className="py-20 md:py-24">
         <div className="section-wrapper">
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Info */}
@@ -92,9 +92,9 @@ export default function Contact() {
               ) : (
                 <div className="card p-8">
                   <h2 className="text-2xl font-bold mb-6">Send Us a Message</h2>
-                  <form id="contact-form" onSubmit={handleSubmit} className="space-y-5">
+                  <form id="contact-form" onSubmit={handleSubmit} className="space-y-6">
                     <div>
-                      <label htmlFor="contact-name" className="block text-sm font-medium mb-1.5">Your Name</label>
+                      <label htmlFor="contact-name" className="block text-sm font-medium mb-2">Your Name</label>
                       <input
                         id="contact-name"
                         type="text"
@@ -103,10 +103,10 @@ export default function Contact() {
                         onChange={(e) => setForm({ ...form, name: e.target.value })}
                         className={`input-field ${errors.name ? 'error' : ''}`}
                       />
-                      {errors.name && <p className="mt-1 text-xs" style={{ color: 'var(--color-error)' }}>{errors.name}</p>}
+                      {errors.name && <p className="mt-1.5 text-xs font-medium" style={{ color: 'var(--color-error)' }}>{errors.name}</p>}
                     </div>
                     <div>
-                      <label htmlFor="contact-email-input" className="block text-sm font-medium mb-1.5">Email Address</label>
+                      <label htmlFor="contact-email-input" className="block text-sm font-medium mb-2">Email Address</label>
                       <input
                         id="contact-email-input"
                         type="email"
@@ -115,10 +115,10 @@ export default function Contact() {
                         onChange={(e) => setForm({ ...form, email: e.target.value })}
                         className={`input-field ${errors.email ? 'error' : ''}`}
                       />
-                      {errors.email && <p className="mt-1 text-xs" style={{ color: 'var(--color-error)' }}>{errors.email}</p>}
+                      {errors.email && <p className="mt-1.5 text-xs font-medium" style={{ color: 'var(--color-error)' }}>{errors.email}</p>}
                     </div>
                     <div>
-                      <label htmlFor="contact-message" className="block text-sm font-medium mb-1.5">Message</label>
+                      <label htmlFor="contact-message" className="block text-sm font-medium mb-2">Message</label>
                       <textarea
                         id="contact-message"
                         rows={5}
@@ -127,7 +127,7 @@ export default function Contact() {
                         onChange={(e) => setForm({ ...form, message: e.target.value })}
                         className={`input-field resize-none ${errors.message ? 'error' : ''}`}
                       />
-                      {errors.message && <p className="mt-1 text-xs" style={{ color: 'var(--color-error)' }}>{errors.message}</p>}
+                      {errors.message && <p className="mt-1.5 text-xs font-medium" style={{ color: 'var(--color-error)' }}>{errors.message}</p>}
                     </div>
                     <button id="contact-submit-btn" type="submit" className="btn btn-primary btn-lg w-full">
                       Send Message <Send size={17} />

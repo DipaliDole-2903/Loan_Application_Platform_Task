@@ -59,12 +59,12 @@ export default function CreditTracker() {
   }
 
   return (
-    <div id="credit-tracker-page" className="animate-fade-in py-10">
+    <div id="credit-tracker-page" className="animate-fade-in py-12 md:py-16">
       <div className="section-wrapper">
         <h1 className="text-3xl font-bold mb-2">Credit Tracker</h1>
         <p className="mb-10" style={{ color: 'var(--color-text-muted)' }}>Monitor your CIBIL score and get personalised tips to improve it.</p>
 
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid lg:grid-cols-3 gap-10 lg:gap-12">
           {/* Score Card */}
           <div className="lg:col-span-2">
             <div className="card p-8" id="credit-score-card">
@@ -101,7 +101,7 @@ export default function CreditTracker() {
             </div>
 
             {/* Improvement Tips */}
-            <div className="card p-6 mt-6" id="credit-tips-card">
+            <div className="card p-8 mt-6" id="credit-tips-card">
               <h3 className="font-bold text-lg mb-5">Improvement Tips</h3>
               <ul className="space-y-4">
                 {improvementTips.map((t, i) => (
@@ -116,7 +116,7 @@ export default function CreditTracker() {
 
           {/* Product Selection */}
           <div className="lg:col-span-1">
-            <div className="card p-6" id="credit-product-card">
+            <div className="card p-8" id="credit-product-card">
               <h3 className="font-bold text-lg mb-2">Best Products For You</h3>
               <p className="text-sm mb-5" style={{ color: 'var(--color-text-muted)' }}>
                 Based on your score of <strong>{score}</strong>, you're eligible for:

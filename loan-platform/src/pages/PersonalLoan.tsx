@@ -32,7 +32,7 @@ export default function PersonalLoan() {
       {/* Hero Banner */}
       <section
         id="personal-loan-hero"
-        className="py-32 md:py-48 relative overflow-hidden"
+        className="relative overflow-hidden py-16 md:py-28 lg:py-36"
         style={{ background: 'linear-gradient(135deg, #0F4C81, #1a6ab1)' }}
       >
         <div className="section-wrapper">
@@ -52,12 +52,14 @@ export default function PersonalLoan() {
       </section>
 
       {/* Benefits */}
-      <section id="personal-loan-benefits" className="py-28 md:py-36">
+      <section id="personal-loan-benefits" className="section-py">
         <div className="section-wrapper">
-          <h2 className="text-3xl font-bold text-center mb-16 md:mb-20">Why Choose Fincera?</h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16 stagger-children">
+          <div className="section-heading">
+            <h2 className="text-2xl md:text-3xl font-bold mb-2">Why Choose Fincera?</h2>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 stagger-children">
             {loanBenefits.personal.map((b) => (
-              <div key={b.title} id={`benefit-${b.title.toLowerCase().replace(' ', '-')}`} className="card p-8 text-center animate-fade-in">
+              <div key={b.title} id={`benefit-${b.title.toLowerCase().replace(' ', '-')}`} className="card card-body text-center animate-fade-in">
                 <div className="text-4xl mb-4">{b.icon}</div>
                 <h3 className="font-semibold mb-2">{b.title}</h3>
                 <p className="text-sm" style={{ color: 'var(--color-text-muted)' }}>{b.desc}</p>
@@ -68,9 +70,9 @@ export default function PersonalLoan() {
       </section>
 
       {/* Eligibility + Documents */}
-      <section id="personal-loan-eligibility" className="py-28 md:py-36" style={{ background: 'var(--color-surface)' }}>
+      <section id="personal-loan-eligibility" className="section-py" style={{ background: 'var(--color-surface)' }}>
         <div className="section-wrapper">
-          <div className="grid md:grid-cols-2 gap-10">
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-10">
             <div>
               <h2 className="text-2xl font-bold mb-8">Eligibility Criteria</h2>
               <ul className="space-y-4">
@@ -98,10 +100,12 @@ export default function PersonalLoan() {
       </section>
 
       {/* FAQs */}
-      <section id="personal-loan-faqs" className="py-28 md:py-36">
+      <section id="personal-loan-faqs" className="section-py">
         <div className="section-wrapper max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-16 md:mb-20">Frequently Asked Questions</h2>
-          <div className="card p-8 md:p-10">
+          <div className="section-heading">
+            <h2 className="text-2xl md:text-3xl font-bold mb-2">Frequently Asked Questions</h2>
+          </div>
+          <div className="card card-body">
             {faqData.personal.map((faq, i) => (
               <FAQItem key={i} q={faq.q} a={faq.a} />
             ))}
@@ -110,10 +114,10 @@ export default function PersonalLoan() {
       </section>
 
       {/* CTA */}
-      <section className="py-28 md:py-36" style={{ background: 'var(--color-primary)' }}>
+      <section className="section-py" style={{ background: 'var(--color-primary)' }}>
         <div className="section-wrapper text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">Ready to Apply?</h2>
-          <p className="text-white/70 mb-8">Quick, easy, transparent. Funds in your account within 2 hours.</p>
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">Ready to Apply?</h2>
+          <p className="text-white/70 mb-6 text-sm md:text-base">Quick, easy, transparent. Funds in your account within 2 hours.</p>
           <button id="personal-loan-cta-btn" onClick={() => navigate('/contact')} className="btn btn-accent btn-lg">
             Start Your Application <ArrowRight size={18} />
           </button>

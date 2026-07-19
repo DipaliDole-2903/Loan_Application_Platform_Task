@@ -32,7 +32,7 @@ export default function BusinessLoan() {
       {/* Hero */}
       <section
         id="business-loan-hero"
-        className="py-32 md:py-48 relative overflow-hidden"
+        className="relative overflow-hidden py-16 md:py-28 lg:py-36"
         style={{ background: 'linear-gradient(135deg, #1FA971, #27c484)' }}
       >
         <div className="section-wrapper">
@@ -54,12 +54,14 @@ export default function BusinessLoan() {
       </section>
 
       {/* Benefits */}
-      <section id="business-loan-benefits" className="py-28 md:py-36">
+      <section id="business-loan-benefits" className="section-py">
         <div className="section-wrapper">
-          <h2 className="text-3xl font-bold text-center mb-16 md:mb-20">Why Businesses Love Fincera</h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16 stagger-children">
+          <div className="section-heading">
+            <h2 className="text-2xl md:text-3xl font-bold mb-2">Why Businesses Love Fincera</h2>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 stagger-children">
             {loanBenefits.business.map((b) => (
-              <div key={b.title} id={`biz-benefit-${b.title.toLowerCase().replace(' ', '-')}`} className="card p-8 text-center animate-fade-in">
+              <div key={b.title} id={`biz-benefit-${b.title.toLowerCase().replace(' ', '-')}`} className="card card-body text-center animate-fade-in">
                 <div className="text-4xl mb-4">{b.icon}</div>
                 <h3 className="font-semibold mb-2">{b.title}</h3>
                 <p className="text-sm" style={{ color: 'var(--color-text-muted)' }}>{b.desc}</p>
@@ -70,9 +72,9 @@ export default function BusinessLoan() {
       </section>
 
       {/* Eligibility + Documents */}
-      <section id="business-loan-eligibility" className="py-28 md:py-36" style={{ background: 'var(--color-surface)' }}>
+      <section id="business-loan-eligibility" className="section-py" style={{ background: 'var(--color-surface)' }}>
         <div className="section-wrapper">
-          <div className="grid md:grid-cols-2 gap-10">
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-10">
             <div>
               <h2 className="text-2xl font-bold mb-8">Eligibility Criteria</h2>
               <ul className="space-y-4">
@@ -100,10 +102,12 @@ export default function BusinessLoan() {
       </section>
 
       {/* FAQs */}
-      <section id="business-loan-faqs" className="py-28 md:py-36">
+      <section id="business-loan-faqs" className="section-py">
         <div className="section-wrapper max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-16 md:mb-20">FAQs</h2>
-          <div className="card p-8 md:p-10">
+          <div className="section-heading">
+            <h2 className="text-2xl md:text-3xl font-bold mb-2">FAQs</h2>
+          </div>
+          <div className="card card-body">
             {faqData.business.map((faq, i) => (
               <FAQItem key={i} q={faq.q} a={faq.a} />
             ))}
@@ -112,10 +116,10 @@ export default function BusinessLoan() {
       </section>
 
       {/* CTA */}
-      <section className="py-28 md:py-36" style={{ background: 'var(--color-primary)' }}>
+      <section className="section-py" style={{ background: 'var(--color-primary)' }}>
         <div className="section-wrapper text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">Grow Your Business Today</h2>
-          <p className="text-white/70 mb-8">Fast approvals. Flexible repayment. Your business, your terms.</p>
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">Grow Your Business Today</h2>
+          <p className="text-white/70 mb-6 text-sm md:text-base">Fast approvals. Flexible repayment. Your business, your terms.</p>
           <button id="business-loan-cta-btn" onClick={() => navigate('/contact')} className="btn btn-xl" style={{ background: 'white', color: 'var(--color-secondary)' }}>
             Apply for Business Loan <ArrowRight size={18} />
           </button>

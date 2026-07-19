@@ -23,7 +23,7 @@ export default function Home() {
       {/* Hero Banner */}
       <section
         id="home-hero"
-        className="relative overflow-hidden py-32 md:py-48"
+        className="relative overflow-hidden py-16 md:py-28 lg:py-36"
         style={{ background: 'linear-gradient(135deg, #0F4C81 0%, #1a6ab1 45%, #1FA971 100%)' }}
       >
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -39,11 +39,11 @@ export default function Home() {
               <div className="badge badge-gold mb-4 inline-flex animate-fade-in">
                 <Zap size={12} /> New: Instant Approval in 2 Hours
               </div>
-              <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight animate-slide-up">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6 leading-tight animate-slide-up">
                 Your Dreams,<br />Our <span style={{ color: '#7EDBA0' }}>Funding</span>
               </h1>
-              <p className="text-white/80 text-lg mb-10 max-w-lg animate-slide-up" style={{ animationDelay: '100ms' }}>
-                Get instant personal & business loans at competitive rates. Minimal paperwork. Maximum trust.
+              <p className="text-white/80 text-sm md:text-lg mb-7 md:mb-10 max-w-lg animate-slide-up" style={{ animationDelay: '100ms' }}>
+                Get instant personal &amp; business loans at competitive rates. Minimal paperwork. Maximum trust.
               </p>
               <div className="flex flex-wrap gap-6 animate-slide-up stagger-children">
                 <button id="home-apply-personal-btn" onClick={() => navigate('/personal-loan')} className="btn btn-accent btn-lg">
@@ -86,18 +86,18 @@ export default function Home() {
       </section>
 
       {/* Stats Bar */}
-      <section id="home-stats" className="py-20 md:py-28" style={{ background: 'var(--color-surface)' }}>
+      <section id="home-stats" className="py-10 md:py-16" style={{ background: 'var(--color-surface)' }}>
         <div className="section-wrapper">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-16 text-center">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10 text-center">
             {[
               { value: '2M+', label: 'Happy Customers' },
               { value: '₹500Cr+', label: 'Total Disbursed' },
               { value: '10.5%', label: 'Interest Starting' },
               { value: '2 Hrs', label: 'Approval Time' },
             ].map((stat) => (
-              <div key={stat.label} className="animate-fade-in">
-                <div className="text-3xl font-bold" style={{ color: 'var(--color-primary)' }}>{stat.value}</div>
-                <div className="text-sm mt-1" style={{ color: 'var(--color-text-muted)' }}>{stat.label}</div>
+              <div key={stat.label} className="animate-fade-in py-2">
+                <div className="text-2xl md:text-3xl font-bold" style={{ color: 'var(--color-primary)' }}>{stat.value}</div>
+                <div className="text-xs md:text-sm mt-1" style={{ color: 'var(--color-text-muted)' }}>{stat.label}</div>
               </div>
             ))}
           </div>
@@ -105,18 +105,18 @@ export default function Home() {
       </section>
 
       {/* Loan Products */}
-      <section id="home-loan-products" className="py-28 md:py-40">
+      <section id="home-loan-products" className="section-py">
         <div className="section-wrapper">
-          <div className="text-center mb-8 md:mb-20">
-            <h2 className="text-3xl md:text-4xl font-bold mb-3" style={{ color: 'var(--color-text)' }}>Our Loan Products</h2>
-            <p style={{ color: 'var(--color-text-muted)' }}>Choose the right financial solution for your needs</p>
+          <div className="section-heading">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-2" style={{ color: 'var(--color-text)' }}>Our Loan Products</h2>
+            <p className="text-sm md:text-base" style={{ color: 'var(--color-text-muted)' }}>Choose the right financial solution for your needs</p>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-8 lg:gap-16 stagger-children mb-8 md:mb-32">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 stagger-children mb-8 md:mb-16">
             {loanProducts.map((loan) => (
               <div
                 key={loan.id}
                 id={`loan-card-${loan.id}`}
-                className="card p-8 cursor-pointer animate-fade-in"
+                className="card card-body cursor-pointer animate-fade-in"
                 onClick={() => navigate(loan.type === 'personal' ? '/personal-loan' : '/business-loan')}
               >
                 <div className="text-4xl mb-4">{loan.icon}</div>
@@ -148,18 +148,18 @@ export default function Home() {
       </section>
 
       {/* Other Services */}
-      <section id="home-services" className="py-28 md:py-40" style={{ background: 'var(--color-surface)' }}>
+      <section id="home-services" className="section-py" style={{ background: 'var(--color-surface)' }}>
         <div className="section-wrapper">
-          <div className="text-center mb-8 md:mb-20">
-            <h2 className="text-3xl font-bold mb-3">Other Services</h2>
-            <p style={{ color: 'var(--color-text-muted)' }}>Everything you need for your financial health</p>
+          <div className="section-heading">
+            <h2 className="text-2xl md:text-3xl font-bold mb-2">Other Services</h2>
+            <p className="text-sm md:text-base" style={{ color: 'var(--color-text-muted)' }}>Everything you need for your financial health</p>
           </div>
-          <div className="grid sm:grid-cols-3 gap-5 sm:gap-8 lg:gap-16 stagger-children">
+          <div className="grid sm:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 stagger-children">
             {services.map((svc) => (
               <div
                 key={svc.title}
                 id={`service-card-${svc.title.toLowerCase().replace(' ', '-')}`}
-                className="card p-8 text-center cursor-pointer animate-fade-in"
+                className="card card-body text-center cursor-pointer animate-fade-in"
                 onClick={() => svc.path !== '#' && navigate(svc.path)}
               >
                 <div
@@ -177,14 +177,15 @@ export default function Home() {
       </section>
 
       {/* Testimonials */}
-      <section id="home-testimonials" className="py-28 md:py-40">
+      <section id="home-testimonials" className="section-py">
         <div className="section-wrapper">
-          <div className="text-center mb-8 md:mb-20">
-            <h2 className="text-3xl font-bold mb-3">What Our Customers Say</h2>
+          <div className="section-heading">
+            <h2 className="text-2xl md:text-3xl font-bold mb-2">What Our Customers Say</h2>
+            <p className="text-sm md:text-base" style={{ color: 'var(--color-text-muted)' }}>Real stories from people who trust Fincera</p>
           </div>
-          <div className="grid sm:grid-cols-3 gap-5 sm:gap-8 lg:gap-16 stagger-children">
+          <div className="grid sm:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 stagger-children">
             {testimonials.map((t, i) => (
-              <div key={i} id={`testimonial-${i}`} className="card p-8 md:p-10 animate-fade-in">
+              <div key={i} id={`testimonial-${i}`} className="card card-body animate-fade-in">
                 <div className="flex gap-1 mb-4">
                   {[...Array(t.rating)].map((_, si) => (
                     <Star key={si} size={16} fill="#F5A623" style={{ color: '#F5A623' }} />
@@ -209,9 +210,9 @@ export default function Home() {
         </div>
       </section>
       {/* App Promo Section */}
-      <section id="home-app-promo" className="py-20 md:py-32 overflow-hidden" style={{ background: 'linear-gradient(135deg, #f0f9ff 0%, #f0fdf4 100%)' }}>
+      <section id="home-app-promo" className="section-py overflow-hidden" style={{ background: 'linear-gradient(135deg, #f0f9ff 0%, #f0fdf4 100%)' }}>
         <div className="section-wrapper">
-          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Image */}
             <div className="flex justify-center lg:justify-start order-2 lg:order-1">
               <div className="relative">
@@ -237,7 +238,7 @@ export default function Home() {
               <div className="badge badge-green mb-5 inline-flex">
                 <Smartphone size={12} /> Now on Mobile
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-5 leading-tight" style={{ color: 'var(--color-text)' }}>
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 leading-tight" style={{ color: 'var(--color-text)' }}>
                 Get the <span style={{ color: 'var(--color-primary)' }}>Fincera App</span><br />
                 <span style={{ color: 'var(--color-secondary)' }}>Loans at Your Fingertips</span>
               </h2>
@@ -279,12 +280,12 @@ export default function Home() {
       </section>
 
       {/* CTA Banner */}
-      <section id="home-cta" className="py-28 md:py-40" style={{ background: 'linear-gradient(135deg, #0F4C81, #1FA971)' }}>
+      <section id="home-cta" className="section-py" style={{ background: 'linear-gradient(135deg, #0F4C81, #1FA971)' }}>
         <div className="section-wrapper text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Ready to Get Started?</h2>
-          <p className="text-white/70 mb-8 text-lg">Join 2 million+ Indians who trust Fincera for their financial needs.</p>
-          <button id="home-cta-btn" onClick={() => navigate('/personal-loan')} className="btn btn-accent btn-xl">
-            Apply Now – It's Free <ArrowRight size={20} />
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3">Ready to Get Started?</h2>
+          <p className="text-white/70 mb-6 text-sm md:text-base max-w-md mx-auto">Join 2 million+ Indians who trust Fincera for their financial needs.</p>
+          <button id="home-cta-btn" onClick={() => navigate('/personal-loan')} className="btn btn-accent btn-lg">
+            Apply Now – It's Free <ArrowRight size={18} />
           </button>
         </div>
       </section>

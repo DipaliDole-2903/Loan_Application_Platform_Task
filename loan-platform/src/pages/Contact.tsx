@@ -27,16 +27,16 @@ export default function Contact() {
   return (
     <div id="contact-page" className="animate-fade-in">
       {/* Hero */}
-      <section className="py-32 md:py-48" style={{ background: 'linear-gradient(135deg, #0F4C81, #1FA971)' }}>
+      <section className="relative overflow-hidden py-16 md:py-28 lg:py-36" style={{ background: 'linear-gradient(135deg, #0F4C81, #1FA971)' }}>
         <div className="section-wrapper text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Contact Us</h1>
           <p className="text-white/70 text-lg">We'd love to hear from you. Our team is always ready to help.</p>
         </div>
       </section>
 
-      <section className="py-28 md:py-36">
+      <section className="section-py">
         <div className="section-wrapper">
-          <div className="grid lg:grid-cols-2 gap-12">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
             {/* Info */}
             <div id="contact-info">
               <h2 className="text-2xl font-bold mb-8">Get In Touch</h2>
@@ -62,7 +62,7 @@ export default function Contact() {
               </div>
 
               {/* Hours */}
-              <div className="mt-10 card p-6" id="contact-hours">
+              <div className="mt-10 card card-body" id="contact-hours">
                 <h3 className="font-semibold mb-4">Business Hours</h3>
                 <div className="space-y-2 text-sm" style={{ color: 'var(--color-text-muted)' }}>
                   <div className="flex justify-between">
@@ -81,7 +81,7 @@ export default function Contact() {
             {/* Form */}
             <div id="contact-form-section">
               {submitted ? (
-                <div className="card p-10 text-center animate-fade-in" id="contact-success">
+                <div className="card card-body text-center animate-fade-in" id="contact-success">
                   <CheckCircle size={56} className="mx-auto mb-5" style={{ color: 'var(--color-secondary)' }} />
                   <h3 className="text-2xl font-bold mb-3">Message Sent!</h3>
                   <p style={{ color: 'var(--color-text-muted)' }}>Thank you for reaching out. We'll get back to you within 24 hours.</p>
@@ -90,7 +90,7 @@ export default function Contact() {
                   </button>
                 </div>
               ) : (
-                <div className="card p-8">
+                <div className="card card-body">
                   <h2 className="text-2xl font-bold mb-6">Send Us a Message</h2>
                   <form id="contact-form" onSubmit={handleSubmit} className="space-y-6">
                     <div>

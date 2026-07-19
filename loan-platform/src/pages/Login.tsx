@@ -1,12 +1,11 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Mail, Phone, ArrowRight, Eye, EyeOff } from 'lucide-react'
+import { Mail, Phone, ArrowRight } from 'lucide-react'
 
 export default function Login() {
   const navigate = useNavigate()
   const [form, setForm] = useState({ email: '', mobile: '' })
   const [errors, setErrors] = useState<{ email?: string; mobile?: string }>({})
-  const [showMobile, setShowMobile] = useState(false)
 
   const validate = () => {
     const newErrors: { email?: string; mobile?: string } = {}
@@ -79,18 +78,19 @@ export default function Login() {
       <div className="w-full lg:w-1/2 flex flex-col justify-center items-center p-6 md:p-12" style={{ background: 'var(--color-bg)' }}>
         <div className="w-full max-w-md animate-slide-up">
           {/* Mobile Logo */}
-          <div className="flex items-center gap-2 mb-8 lg:hidden">
+          <div className="flex flex-col items-center justify-center gap-3 mb-8 lg:hidden text-center">
             <div
-              className="w-9 h-9 rounded-xl flex items-center justify-center text-white font-bold text-lg"
+              className="w-14 h-14 rounded-2xl flex items-center justify-center text-white font-bold text-2xl shadow-lg"
               style={{ background: 'linear-gradient(135deg, #0F4C81, #1FA971)' }}
             >F</div>
-            <span className="font-bold text-xl" style={{ color: 'var(--color-primary)' }}>
+            <span className="font-bold text-2xl" style={{ color: 'var(--color-primary)' }}>
               Fin<span style={{ color: 'var(--color-secondary)' }}>cera</span>
             </span>
+            <p className="text-xs tracking-wide" style={{ color: 'var(--color-text-muted)' }}>Smart Lending. Brighter Future.</p>
           </div>
 
-          <h1 className="text-3xl font-bold mb-2" style={{ color: 'var(--color-text)' }}>Sign In</h1>
-          <p className="mb-10 text-sm" style={{ color: 'var(--color-text-muted)' }}>
+          <h1 className="text-3xl font-bold mb-2 text-center lg:text-left" style={{ color: 'var(--color-text)' }}>Sign In</h1>
+          <p className="mb-10 text-sm text-center lg:text-left" style={{ color: 'var(--color-text-muted)' }}>
             Enter your details to continue to your dashboard
           </p>
 

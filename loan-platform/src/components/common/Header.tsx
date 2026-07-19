@@ -28,11 +28,11 @@ export default function Header() {
 
   return (
     <header
-      className="sticky top-0 z-50 glass border-b border-white/40"
+      className="header sticky top-0 z-50 glass border-b border-white/40"
       style={{ boxShadow: '0 2px 20px rgba(15,76,129,0.08)' }}
     >
       <div className="section-wrapper">
-        <div className="flex items-center justify-between h-16 md:h-18">
+        <div className="header-inner flex items-center justify-between">
           {/* Logo */}
           <Link
             to="/home"
@@ -41,7 +41,7 @@ export default function Header() {
           >
             <div
               className="w-9 h-9 rounded-xl flex items-center justify-center text-white font-bold text-lg shadow-md transition-transform group-hover:scale-105"
-              style={{ background: 'linear-gradient(135deg, #0F4C81, #1FA971)' }}
+              style={{ background: 'linear-gradient(135deg, #810f70ff, #8ba91fff)' }}
             >
               F
             </div>

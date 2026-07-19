@@ -34,7 +34,7 @@ export default function Splash() {
       </div>
 
       {/* Logo */}
-      <div className="relative animate-fade-in text-center">
+      <div className="relative animate-fade-in text-center w-full flex flex-col items-center justify-center">
         <div
           className="w-28 h-28 rounded-3xl flex items-center justify-center text-white font-bold text-5xl shadow-2xl mx-auto mb-6 animate-pulse-glow"
           style={{ background: 'rgba(255,255,255,0.2)', backdropFilter: 'blur(10px)', border: '1px solid rgba(255,255,255,0.3)' }}

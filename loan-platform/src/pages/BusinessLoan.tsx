@@ -32,7 +32,7 @@ export default function BusinessLoan() {
       {/* Hero */}
       <section
         id="business-loan-hero"
-        className="py-24 md:py-32 relative overflow-hidden"
+        className="py-32 md:py-48 relative overflow-hidden"
         style={{ background: 'linear-gradient(135deg, #1FA971, #27c484)' }}
       >
         <div className="section-wrapper">
@@ -54,10 +54,10 @@ export default function BusinessLoan() {
       </section>
 
       {/* Benefits */}
-      <section id="business-loan-benefits" className="py-20 md:py-24">
+      <section id="business-loan-benefits" className="py-28 md:py-36">
         <div className="section-wrapper">
           <h2 className="text-3xl font-bold text-center mb-16 md:mb-20">Why Businesses Love Fincera</h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 stagger-children">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16 stagger-children">
             {loanBenefits.business.map((b) => (
               <div key={b.title} id={`biz-benefit-${b.title.toLowerCase().replace(' ', '-')}`} className="card p-8 text-center animate-fade-in">
                 <div className="text-4xl mb-4">{b.icon}</div>
@@ -70,7 +70,7 @@ export default function BusinessLoan() {
       </section>
 
       {/* Eligibility + Documents */}
-      <section id="business-loan-eligibility" className="py-20 md:py-24" style={{ background: 'var(--color-surface)' }}>
+      <section id="business-loan-eligibility" className="py-28 md:py-36" style={{ background: 'var(--color-surface)' }}>
         <div className="section-wrapper">
           <div className="grid md:grid-cols-2 gap-10">
             <div>
@@ -100,7 +100,7 @@ export default function BusinessLoan() {
       </section>
 
       {/* FAQs */}
-      <section id="business-loan-faqs" className="py-20 md:py-24">
+      <section id="business-loan-faqs" className="py-28 md:py-36">
         <div className="section-wrapper max-w-3xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-16 md:mb-20">FAQs</h2>
           <div className="card p-8 md:p-10">
@@ -112,7 +112,7 @@ export default function BusinessLoan() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 md:py-24" style={{ background: 'var(--color-primary)' }}>
+      <section className="py-28 md:py-36" style={{ background: 'var(--color-primary)' }}>
         <div className="section-wrapper text-center">
           <h2 className="text-3xl font-bold text-white mb-4">Grow Your Business Today</h2>
           <p className="text-white/70 mb-8">Fast approvals. Flexible repayment. Your business, your terms.</p>

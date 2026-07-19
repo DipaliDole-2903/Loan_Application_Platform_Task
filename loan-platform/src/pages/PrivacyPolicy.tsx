@@ -36,14 +36,14 @@ export default function PrivacyPolicy() {
 
   return (
     <div id="privacy-policy-page" className="animate-fade-in">
-      <section className="py-24 md:py-32" style={{ background: 'linear-gradient(135deg, #0F4C81, #1a6ab1)' }}>
+      <section className="py-32 md:py-48" style={{ background: 'linear-gradient(135deg, #0F4C81, #1a6ab1)' }}>
         <div className="section-wrapper text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Privacy Policy</h1>
           <p className="text-white/70">Last updated: 1 July 2026</p>
         </div>
       </section>
 
-      <section className="py-20 md:py-24">
+      <section className="py-28 md:py-36">
         <div className="section-wrapper max-w-4xl mx-auto">
           <p className="text-sm mb-10 leading-relaxed" style={{ color: 'var(--color-text-muted)' }}>
             Fincera Financial Services ("Fincera", "we", "us", or "our") is committed to protecting your personal information. This Privacy Policy explains how we collect, use, and safeguard your data when you use our platform.

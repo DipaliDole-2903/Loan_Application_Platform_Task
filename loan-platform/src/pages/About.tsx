@@ -15,7 +15,7 @@ export default function About() {
   return (
     <div id="about-page" className="animate-fade-in">
       {/* Hero */}
-      <section className="py-24 md:py-32" style={{ background: 'linear-gradient(135deg, #0F4C81, #1a6ab1)' }}>
+      <section className="py-32 md:py-48" style={{ background: 'linear-gradient(135deg, #0F4C81, #1a6ab1)' }}>
         <div className="section-wrapper text-center">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-5">About Fincera</h1>
           <p className="text-white/70 text-xl max-w-2xl mx-auto">
@@ -25,9 +25,9 @@ export default function About() {
       </section>
 
       {/* Stats */}
-      <section className="py-12 md:py-16" style={{ background: 'var(--color-surface)' }}>
+      <section className="py-20 md:py-28" style={{ background: 'var(--color-surface)' }}>
         <div className="section-wrapper">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 text-center">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-12 md:gap-16 text-center">
             {stats.map((s) => (
               <div key={s.label} id={`about-stat-${s.label.toLowerCase()}`}>
                 <div className="text-4xl font-bold mb-1" style={{ color: 'var(--color-primary)' }}>{s.value}</div>
@@ -39,7 +39,7 @@ export default function About() {
       </section>
 
       {/* Mission / Vision / Values */}
-      <section id="about-mission" className="py-20 md:py-24">
+      <section id="about-mission" className="py-28 md:py-36">
         <div className="section-wrapper">
           <div className="grid md:grid-cols-3 gap-10 lg:gap-12">
             {[
@@ -58,7 +58,7 @@ export default function About() {
       </section>
 
       {/* Team */}
-      <section id="about-team" className="py-20 md:py-24" style={{ background: 'var(--color-surface)' }}>
+      <section id="about-team" className="py-28 md:py-36" style={{ background: 'var(--color-surface)' }}>
         <div className="section-wrapper">
           <h2 className="text-3xl font-bold text-center mb-16 md:mb-20">Leadership Team</h2>
           <div className="grid sm:grid-cols-3 gap-10 lg:gap-12 max-w-4xl mx-auto stagger-children">

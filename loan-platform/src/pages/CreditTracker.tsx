@@ -59,7 +59,7 @@ export default function CreditTracker() {
   }
 
   return (
-    <div id="credit-tracker-page" className="animate-fade-in py-12 md:py-16">
+    <div id="credit-tracker-page" className="animate-fade-in py-20 md:py-28">
       <div className="section-wrapper">
         <h1 className="text-3xl font-bold mb-2">Credit Tracker</h1>
         <p className="mb-10" style={{ color: 'var(--color-text-muted)' }}>Monitor your CIBIL score and get personalised tips to improve it.</p>
@@ -86,13 +86,13 @@ export default function CreditTracker() {
 
               <CreditGauge score={score} />
 
-              <div className="grid grid-cols-3 gap-4 mt-8">
+              <div className="grid grid-cols-3 gap-5 mt-10">
                 {[
                   { label: 'Payment History', value: '95%', color: '#1FA971' },
                   { label: 'Credit Utilisation', value: '28%', color: '#0F4C81' },
                   { label: 'Credit Age', value: '5.2 Yrs', color: '#F5A623' },
                 ].map((item) => (
-                  <div key={item.label} className="text-center p-4 rounded-2xl" style={{ background: 'var(--color-bg)' }}>
+                  <div key={item.label} className="text-center p-4 rounded-3xl" style={{ background: 'var(--color-bg)' }}>
                     <div className="text-xl font-bold" style={{ color: item.color }}>{item.value}</div>
                     <div className="text-xs mt-1" style={{ color: 'var(--color-text-muted)' }}>{item.label}</div>
                   </div>

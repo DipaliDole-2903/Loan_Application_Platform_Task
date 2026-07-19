@@ -34,7 +34,7 @@ export const loanProducts: LoanProduct[] = [
     tenure: 'Up to 7 Years',
     icon: '🏠',
     badge: 'Low Interest',
-    color: '#1FA971',
+    color: '#7fba3bff',
   },
   {
     id: 'bl-001',
@@ -58,7 +58,7 @@ export const loanProducts: LoanProduct[] = [
     tenure: 'Up to 3 Years',
     icon: '💼',
     badge: 'Quick Disbursal',
-    color: '#0F4C81',
+    color: '#39810fff',
   },
 ]
 

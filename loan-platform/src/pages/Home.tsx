@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom'
-import { ArrowRight, Star, TrendingUp, Shield, Zap, ChevronRight } from 'lucide-react'
+import { ArrowRight, Star, TrendingUp, Shield, Zap, ChevronRight, Download, Smartphone } from 'lucide-react'
 import { loanProducts } from '../data/loans'
+import heroWoman from '../assets/hero_woman.png'
 
 const services = [
   { icon: TrendingUp, title: 'Credit Tracker', desc: 'Monitor & improve your CIBIL score in real time', path: '/credit-tracker', color: '#0F4C81' },
@@ -22,7 +23,7 @@ export default function Home() {
       {/* Hero Banner */}
       <section
         id="home-hero"
-        className="relative overflow-hidden py-24 md:py-40"
+        className="relative overflow-hidden py-32 md:py-48"
         style={{ background: 'linear-gradient(135deg, #0F4C81 0%, #1a6ab1 45%, #1FA971 100%)' }}
       >
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -32,32 +33,62 @@ export default function Home() {
           ))}
         </div>
         <div className="section-wrapper relative">
-          <div className="max-w-2xl">
-            <div className="badge badge-gold mb-4 inline-flex animate-fade-in">
-              <Zap size={12} /> New: Instant Approval in 2 Hours
+          <div className="hero-inner">
+            {/* Left: Text */}
+            <div className="max-w-2xl">
+              <div className="badge badge-gold mb-4 inline-flex animate-fade-in">
+                <Zap size={12} /> New: Instant Approval in 2 Hours
+              </div>
+              <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight animate-slide-up">
+                Your Dreams,<br />Our <span style={{ color: '#7EDBA0' }}>Funding</span>
+              </h1>
+              <p className="text-white/80 text-lg mb-10 max-w-lg animate-slide-up" style={{ animationDelay: '100ms' }}>
+                Get instant personal & business loans at competitive rates. Minimal paperwork. Maximum trust.
+              </p>
+              <div className="flex flex-wrap gap-6 animate-slide-up stagger-children">
+                <button id="home-apply-personal-btn" onClick={() => navigate('/personal-loan')} className="btn btn-accent btn-lg">
+                  Apply for Personal Loan <ArrowRight size={18} />
+                </button>
+                <button id="home-apply-business-btn" onClick={() => navigate('/business-loan')} className="btn btn-outline btn-lg" style={{ color: 'white', borderColor: 'white' }}>
+                  Business Loan
+                </button>
+              </div>
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight animate-slide-up">
-              Your Dreams,<br />Our <span style={{ color: '#7EDBA0' }}>Funding</span>
-            </h1>
-            <p className="text-white/80 text-lg mb-10 max-w-lg animate-slide-up" style={{ animationDelay: '100ms' }}>
-              Get instant personal & business loans at competitive rates. Minimal paperwork. Maximum trust.
-            </p>
-            <div className="flex flex-wrap gap-6 animate-slide-up stagger-children">
-              <button id="home-apply-personal-btn" onClick={() => navigate('/personal-loan')} className="btn btn-accent btn-lg">
-                Apply for Personal Loan <ArrowRight size={18} />
-              </button>
-              <button id="home-apply-business-btn" onClick={() => navigate('/business-loan')} className="btn btn-outline btn-lg" style={{ color: 'white', borderColor: 'white' }}>
-                Business Loan
-              </button>
+
+            {/* Right: Hero image (desktop only) */}
+            <div className="hidden lg:flex items-center justify-center animate-slide-in-right" style={{ animationDelay: '200ms' }}>
+              <div className="relative">
+                {/* Glow backdrop */}
+                <div className="absolute inset-0 rounded-3xl blur-3xl opacity-30" style={{ background: 'rgba(127,219,160,0.5)', transform: 'scale(0.9) translateY(8%)' }} />
+                <img
+                  src={heroWoman}
+                  alt="Happy customer with Fincera app"
+                  className="relative rounded-3xl shadow-2xl"
+                  style={{ maxHeight: '420px', objectFit: 'cover', border: '2px solid rgba(255,255,255,0.2)' }}
+                />
+                {/* Floating badge */}
+                <div
+                  className="absolute -bottom-4 -left-6 flex items-center gap-3 rounded-2xl px-5 py-3 shadow-xl"
+                  style={{ background: 'white' }}
+                >
+                  <div className="w-9 h-9 rounded-xl flex items-center justify-center" style={{ background: 'rgba(31,169,113,0.12)' }}>
+                    <Smartphone size={18} style={{ color: '#1FA971' }} />
+                  </div>
+                  <div>
+                    <div className="text-xs font-semibold" style={{ color: '#1F2937' }}>Instant Approval</div>
+                    <div className="text-xs" style={{ color: '#6B7280' }}>Funds in 2 hours ⚡</div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Stats Bar */}
-      <section id="home-stats" className="py-12 md:py-16" style={{ background: 'var(--color-surface)' }}>
+      <section id="home-stats" className="py-20 md:py-28" style={{ background: 'var(--color-surface)' }}>
         <div className="section-wrapper">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 text-center">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-16 text-center">
             {[
               { value: '2M+', label: 'Happy Customers' },
               { value: '₹500Cr+', label: 'Total Disbursed' },
@@ -74,13 +105,13 @@ export default function Home() {
       </section>
 
       {/* Loan Products */}
-      <section id="home-loan-products" className="py-20 md:py-28">
+      <section id="home-loan-products" className="py-28 md:py-40">
         <div className="section-wrapper">
-          <div className="text-center mb-16 md:mb-20">
+          <div className="text-center mb-8 md:mb-20">
             <h2 className="text-3xl md:text-4xl font-bold mb-3" style={{ color: 'var(--color-text)' }}>Our Loan Products</h2>
             <p style={{ color: 'var(--color-text-muted)' }}>Choose the right financial solution for your needs</p>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 stagger-children">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-8 lg:gap-16 stagger-children mb-8 md:mb-32">
             {loanProducts.map((loan) => (
               <div
                 key={loan.id}
@@ -117,13 +148,13 @@ export default function Home() {
       </section>
 
       {/* Other Services */}
-      <section id="home-services" className="py-20 md:py-28" style={{ background: 'var(--color-surface)' }}>
+      <section id="home-services" className="py-28 md:py-40" style={{ background: 'var(--color-surface)' }}>
         <div className="section-wrapper">
-          <div className="text-center mb-16 md:mb-20">
+          <div className="text-center mb-8 md:mb-20">
             <h2 className="text-3xl font-bold mb-3">Other Services</h2>
             <p style={{ color: 'var(--color-text-muted)' }}>Everything you need for your financial health</p>
           </div>
-          <div className="grid sm:grid-cols-3 gap-8 lg:gap-10 stagger-children">
+          <div className="grid sm:grid-cols-3 gap-5 sm:gap-8 lg:gap-16 stagger-children">
             {services.map((svc) => (
               <div
                 key={svc.title}
@@ -146,12 +177,12 @@ export default function Home() {
       </section>
 
       {/* Testimonials */}
-      <section id="home-testimonials" className="py-20 md:py-28">
+      <section id="home-testimonials" className="py-28 md:py-40">
         <div className="section-wrapper">
-          <div className="text-center mb-16 md:mb-20">
+          <div className="text-center mb-8 md:mb-20">
             <h2 className="text-3xl font-bold mb-3">What Our Customers Say</h2>
           </div>
-          <div className="grid sm:grid-cols-3 gap-8 lg:gap-10 stagger-children">
+          <div className="grid sm:grid-cols-3 gap-5 sm:gap-8 lg:gap-16 stagger-children">
             {testimonials.map((t, i) => (
               <div key={i} id={`testimonial-${i}`} className="card p-8 md:p-10 animate-fade-in">
                 <div className="flex gap-1 mb-4">
@@ -177,9 +208,78 @@ export default function Home() {
           </div>
         </div>
       </section>
+      {/* App Promo Section */}
+      <section id="home-app-promo" className="py-20 md:py-32 overflow-hidden" style={{ background: 'linear-gradient(135deg, #f0f9ff 0%, #f0fdf4 100%)' }}>
+        <div className="section-wrapper">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+            {/* Image */}
+            <div className="flex justify-center lg:justify-start order-2 lg:order-1">
+              <div className="relative">
+                <div className="absolute inset-0 rounded-3xl blur-2xl opacity-25" style={{ background: 'linear-gradient(135deg, #0F4C81, #1FA971)', transform: 'scale(0.85) translateY(10%)' }} />
+                <img
+                  src={heroWoman}
+                  alt="Fincera app on mobile"
+                  className="relative rounded-3xl shadow-xl"
+                  style={{ maxHeight: '480px', objectFit: 'cover', border: '3px solid rgba(15,76,129,0.1)' }}
+                />
+                {/* Floating approval badge */}
+                <div
+                  className="absolute top-6 -right-4 rounded-2xl px-4 py-2.5 shadow-lg animate-fade-in"
+                  style={{ background: 'var(--color-primary)', animationDelay: '0.3s' }}
+                >
+                  <div className="text-white font-bold text-sm">✅ Approved!</div>
+                  <div className="text-white/70 text-xs">₹5,00,000 disbursed</div>
+                </div>
+              </div>
+            </div>
+            {/* Text */}
+            <div className="order-1 lg:order-2">
+              <div className="badge badge-green mb-5 inline-flex">
+                <Smartphone size={12} /> Now on Mobile
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold mb-5 leading-tight" style={{ color: 'var(--color-text)' }}>
+                Get the <span style={{ color: 'var(--color-primary)' }}>Fincera App</span><br />
+                <span style={{ color: 'var(--color-secondary)' }}>Loans at Your Fingertips</span>
+              </h2>
+              <p className="text-base mb-8 leading-relaxed" style={{ color: 'var(--color-text-muted)' }}>
+                Apply for loans, track your CIBIL score, and manage repayments — all in one sleek app. Get instant approvals, real-time updates, and 24/7 support.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <button
+                  id="home-download-android"
+                  className="btn btn-primary btn-lg gap-3"
+                  onClick={() => navigate('/contact')}
+                >
+                  <Download size={18} /> Download App
+                </button>
+                <button
+                  id="home-learn-more"
+                  className="btn btn-outline btn-lg"
+                  onClick={() => navigate('/personal-loan')}
+                >
+                  Learn More <ArrowRight size={18} />
+                </button>
+              </div>
+              {/* Mini stats */}
+              <div className="grid grid-cols-3 gap-4 mt-10">
+                {[
+                  { value: '4.8★', label: 'App Rating' },
+                  { value: '2M+', label: 'Downloads' },
+                  { value: '2 Hrs', label: 'Avg. Approval' },
+                ].map((s) => (
+                  <div key={s.label} className="text-center p-3 rounded-2xl" style={{ background: 'rgba(15,76,129,0.06)' }}>
+                    <div className="font-bold text-lg" style={{ color: 'var(--color-primary)' }}>{s.value}</div>
+                    <div className="text-xs mt-0.5" style={{ color: 'var(--color-text-muted)' }}>{s.label}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* CTA Banner */}
-      <section id="home-cta" className="py-20 md:py-28" style={{ background: 'linear-gradient(135deg, #0F4C81, #1FA971)' }}>
+      <section id="home-cta" className="py-28 md:py-40" style={{ background: 'linear-gradient(135deg, #0F4C81, #1FA971)' }}>
         <div className="section-wrapper text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Ready to Get Started?</h2>
           <p className="text-white/70 mb-8 text-lg">Join 2 million+ Indians who trust Fincera for their financial needs.</p>

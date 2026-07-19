@@ -27,14 +27,14 @@ export default function Contact() {
   return (
     <div id="contact-page" className="animate-fade-in">
       {/* Hero */}
-      <section className="py-24 md:py-32" style={{ background: 'linear-gradient(135deg, #0F4C81, #1FA971)' }}>
+      <section className="py-32 md:py-48" style={{ background: 'linear-gradient(135deg, #0F4C81, #1FA971)' }}>
         <div className="section-wrapper text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Contact Us</h1>
           <p className="text-white/70 text-lg">We'd love to hear from you. Our team is always ready to help.</p>
         </div>
       </section>
 
-      <section className="py-20 md:py-24">
+      <section className="py-28 md:py-36">
         <div className="section-wrapper">
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Info */}

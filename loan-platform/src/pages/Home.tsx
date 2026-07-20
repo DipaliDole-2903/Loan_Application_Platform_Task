@@ -281,9 +281,9 @@ export default function Home() {
 
       {/* CTA Banner */}
       <section id="home-cta" className="section-py" style={{ background: 'linear-gradient(135deg, #0F4C81, #1FA971)' }}>
-        <div className="section-wrapper text-center">
+        <div className="section-wrapper flex flex-col items-center justify-center text-center">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3">Ready to Get Started?</h2>
-          <p className="text-white/70 mb-6 text-sm md:text-base max-w-md mx-auto">Join 2 million+ Indians who trust Fincera for their financial needs.</p>
+          <p className="text-white/70 mb-6 text-sm md:text-base max-w-md text-center">Join 2 million+ Indians who trust Fincera for their financial needs.</p>
           <button id="home-cta-btn" onClick={() => navigate('/personal-loan')} className="btn btn-accent btn-lg">
             Apply Now – It's Free <ArrowRight size={18} />
           </button>

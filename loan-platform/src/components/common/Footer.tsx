@@ -12,12 +12,11 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-2.5 mb-5">
-              <div
-                className="w-10 h-10 rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-lg"
-                style={{ background: 'rgba(255,255,255,0.2)' }}
-              >
-                F
-              </div>
+              <img 
+                src="/image.png" 
+                alt="Fincera Logo" 
+                className="w-10 h-10 object-contain rounded-xl shadow-lg bg-white/20"
+              />
               <span className="font-bold text-2xl text-white">Fincera</span>
             </div>
             <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.7)' }}>

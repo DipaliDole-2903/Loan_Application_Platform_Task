@@ -101,7 +101,7 @@ export default function CreditTracker() {
             </div>
 
             {/* Improvement Tips */}
-            <div className="card card-body mt-6" id="credit-tips-card">
+            <div className="card card-body mt-10" id="credit-tips-card">
               <h3 className="font-bold text-lg mb-5">Improvement Tips</h3>
               <ul className="space-y-4">
                 {improvementTips.map((t, i) => (
@@ -147,6 +147,15 @@ export default function CreditTracker() {
               >
                 Check Eligibility
               </button>
+            </div>
+            
+            {/* Decorative Image */}
+            <div className="mt-6 rounded-3xl overflow-hidden shadow-lg border border-gray-100">
+              <img 
+                src="/credit-report.png" 
+                alt="Credit Report and Analytics" 
+                className="w-full h-auto object-cover transition-transform hover:scale-105 duration-500"
+              />
             </div>
           </div>
         </div>

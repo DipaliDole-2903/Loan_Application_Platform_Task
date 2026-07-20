@@ -12,7 +12,7 @@ export default function Splash() {
   return (
     <div
       className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden"
-      style={{ background: 'linear-gradient(135deg, #810f52ff 0%, #b11a1aff 50%, #1FA971 100%)' }}
+      style={{ background: 'linear-gradient(135deg, #68810fff 0%, #651ab1ff 50%, #1FA971 100%)' }}
       id="splash-screen"
     >
       {/* Animated background circles */}
@@ -35,12 +35,12 @@ export default function Splash() {
 
       {/* Logo */}
       <div className="relative animate-fade-in text-center w-full flex flex-col items-center justify-center">
-        <div
-          className="w-28 h-28 rounded-3xl flex items-center justify-center text-white font-bold text-5xl shadow-2xl mx-auto mb-6 animate-pulse-glow"
-          style={{ background: 'rgba(255,255,255,0.2)', backdropFilter: 'blur(10px)', border: '1px solid rgba(255,255,255,0.3)' }}
-        >
-          F
-        </div>
+        <img 
+          src="/image.png" 
+          alt="Fincera Logo" 
+          className="w-28 h-28 object-contain rounded-3xl shadow-2xl mx-auto mb-6 animate-pulse-glow bg-white/20"
+          style={{ backdropFilter: 'blur(10px)', border: '1px solid rgba(255,255,255,0.3)' }}
+        />
         <h1 className="text-5xl font-bold text-white mb-2">
           Fin<span style={{ color: '#7EDBA0' }}>cera</span>
         </h1>

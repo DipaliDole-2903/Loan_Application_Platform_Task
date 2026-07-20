@@ -39,12 +39,11 @@ export default function Header() {
             className="flex items-center gap-2.5 group"
             id="header-logo"
           >
-            <div
-              className="w-9 h-9 rounded-xl flex items-center justify-center text-white font-bold text-lg shadow-md transition-transform group-hover:scale-105"
-              style={{ background: 'linear-gradient(135deg, #810f70ff, #8ba91fff)' }}
-            >
-              F
-            </div>
+            <img 
+              src="/image.png" 
+              alt="Fincera Logo" 
+              className="w-9 h-9 object-contain rounded-xl shadow-md transition-transform group-hover:scale-105"
+            />
             <span className="font-bold text-xl" style={{ color: 'var(--color-primary)' }}>
               Fin<span style={{ color: 'var(--color-secondary)' }}>cera</span>
             </span>
@@ -58,7 +57,7 @@ export default function Header() {
                   <button
                     id={`nav-${item.label.toLowerCase()}-dropdown`}
                     onClick={() => setLoansOpen(!loansOpen)}
-                    className="flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium transition-all hover:bg-blue-50"
+                    className={`flex items-center gap-1.5 px-4 py-2 rounded-sm text-sm font-medium transition-all ${loansOpen ? 'bg-[#efe9fa]' : 'hover:bg-[#efe9fa]'}`}
                     style={{ color: 'var(--color-text)' }}
                   >
                     {item.label}
@@ -75,7 +74,7 @@ export default function Header() {
                           to={child.path}
                           id={`nav-${child.label.toLowerCase().replace(' ', '-')}`}
                           onClick={() => setLoansOpen(false)}
-                          className="block px-4 py-3 text-sm hover:bg-blue-50 transition-colors"
+                          className="block px-4 py-3 text-sm hover:bg-[#efe9fa] transition-colors"
                           style={{ color: isActive(child.path) ? 'var(--color-primary)' : 'var(--color-text)' }}
                         >
                           {child.label}
@@ -89,11 +88,11 @@ export default function Header() {
                   key={item.path}
                   to={item.path!}
                   id={`nav-${item.label.toLowerCase().replace(' ', '-')}`}
-                  className="px-4 py-2 rounded-full text-sm font-medium transition-all hover:bg-blue-50"
+                  className="px-4 py-2 rounded-sm text-sm font-medium transition-all hover:bg-[#efe9fa]"
                   style={{
                     color: isActive(item.path!) ? 'var(--color-primary)' : 'var(--color-text)',
                     fontWeight: isActive(item.path!) ? '600' : '500',
-                    background: isActive(item.path!) ? 'rgba(15,76,129,0.08)' : '',
+                    background: isActive(item.path!) ? '#efe9fa' : '',
                   }}
                 >
                   {item.label}
@@ -116,13 +115,15 @@ export default function Header() {
               />
             </button>
 
-            <button
-              id="header-apply-btn"
-              onClick={() => navigate('/personal-loan')}
-              className="hidden md:flex btn btn-primary btn-sm"
-            >
-              Apply Now
-            </button>
+            <div className="hidden md:block">
+              <button
+                id="header-apply-btn"
+                onClick={() => navigate('/personal-loan')}
+                className="btn btn-primary btn-sm flex"
+              >
+                Apply Now
+              </button>
+            </div>
 
             {/* Mobile Menu Toggle */}
             <button

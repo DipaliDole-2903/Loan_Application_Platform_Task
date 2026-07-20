@@ -27,7 +27,7 @@ export default function Login() {
       {/* Left Panel */}
       <div
         className="hidden lg:flex lg:w-1/2 flex-col justify-center items-center p-12 relative"
-        style={{ background: 'linear-gradient(135deg, #0F4C81 0%, #1a6ab1 55%, #1FA971 100%)' }}
+        style={{ background: 'linear-gradient(135deg, #55810fff 0%, #b1ae1aff 55%, #1FA971 100%)' }}
       >
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           {[...Array(5)].map((_, i) => (
@@ -45,11 +45,13 @@ export default function Login() {
           ))}
         </div>
         <div className="relative text-center text-white animate-fade-in">
-          <div
-            className="w-20 h-20 rounded-2xl flex items-center justify-center text-white font-bold text-3xl shadow-2xl mx-auto mb-8"
-            style={{ background: 'rgba(255,255,255,0.2)', backdropFilter: 'blur(12px)', border: '1px solid rgba(255,255,255,0.3)' }}
-          >
-            F
+          <div className="w-full flex justify-center mb-8">
+            <img 
+              src="/image.png" 
+              alt="Fincera Logo" 
+              className="w-20 h-20 object-contain rounded-2xl shadow-2xl bg-white/20"
+              style={{ backdropFilter: 'blur(12px)', border: '1px solid rgba(255,255,255,0.3)' }}
+            />
           </div>
           <h2 className="text-4xl font-bold mb-4">Welcome Back!</h2>
           <p className="text-white/70 text-lg leading-relaxed max-w-xs mx-auto">
@@ -79,10 +81,11 @@ export default function Login() {
         <div className="w-full max-w-md animate-slide-up">
           {/* Mobile Logo */}
           <div className="flex flex-col items-center justify-center gap-3 mb-8 lg:hidden text-center">
-            <div
-              className="w-14 h-14 rounded-2xl flex items-center justify-center text-white font-bold text-2xl shadow-lg"
-              style={{ background: 'linear-gradient(135deg, #0F4C81, #1FA971)' }}
-            >F</div>
+            <img 
+              src="/image.png" 
+              alt="Fincera Logo" 
+              className="w-14 h-14 object-contain rounded-2xl shadow-lg bg-white/20"
+            />
             <span className="font-bold text-2xl" style={{ color: 'var(--color-primary)' }}>
               Fin<span style={{ color: 'var(--color-secondary)' }}>cera</span>
             </span>
@@ -138,11 +141,12 @@ export default function Login() {
             </div>
 
             {/* Terms */}
-            <div className="flex items-start gap-3 pt-2">
+            <div className="flex items-start gap-2 pt-1">
               <input
                 type="checkbox"
                 id="login-terms"
-                className="mt-1 accent-blue-700 w-4 h-4 rounded border-gray-300"
+                className="mt-1 w-4 h-4 rounded border-gray-300"
+                style={{ accentColor: '#55810f' }}
                 required
               />
               <label htmlFor="login-terms" className="text-sm leading-relaxed" style={{ color: 'var(--color-text-muted)' }}>

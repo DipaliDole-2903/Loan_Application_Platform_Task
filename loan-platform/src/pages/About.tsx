@@ -1,9 +1,11 @@
+import { Calendar, Users, MapPin, IndianRupee } from 'lucide-react'
+
 export default function About() {
   const stats = [
-    { value: '2020', label: 'Founded' },
-    { value: '2M+', label: 'Customers' },
-    { value: '28', label: 'Cities' },
-    { value: '₹500Cr+', label: 'Disbursed' },
+    { value: '2020', label: 'Founded', icon: <Calendar size={36} /> },
+    { value: '2M+', label: 'Customers', icon: <Users size={36} /> },
+    { value: '28', label: 'Cities', icon: <MapPin size={36} /> },
+    { value: '₹500Cr+', label: 'Disbursed', icon: <IndianRupee size={36} /> },
   ]
 
   const team = [
@@ -16,9 +18,9 @@ export default function About() {
     <div id="about-page" className="animate-fade-in">
       {/* Hero */}
       <section className="relative overflow-hidden py-16 md:py-28 lg:py-36" style={{ background: 'linear-gradient(135deg, #0F4C81, #1a6ab1)' }}>
-        <div className="section-wrapper text-center">
+        <div className="section-wrapper flex flex-col items-center justify-center text-center">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-5">About Fincera</h1>
-          <p className="text-white/70 text-xl max-w-2xl mx-auto">
+          <p className="text-white/70 text-xl max-w-3xl mx-auto text-center">
             We're on a mission to make credit accessible, transparent, and empowering for every Indian.
           </p>
         </div>
@@ -29,7 +31,10 @@ export default function About() {
         <div className="section-wrapper">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10 text-center">
             {stats.map((s) => (
-              <div key={s.label} id={`about-stat-${s.label.toLowerCase()}`}>
+              <div key={s.label} id={`about-stat-${s.label.toLowerCase()}`} className="flex flex-col items-center">
+                <div className="mb-3" style={{ color: 'var(--color-secondary)' }}>
+                  {s.icon}
+                </div>
                 <div className="text-4xl font-bold mb-1" style={{ color: 'var(--color-primary)' }}>{s.value}</div>
                 <div className="text-sm" style={{ color: 'var(--color-text-muted)' }}>{s.label}</div>
               </div>

@@ -5,71 +5,49 @@ A modern, mobile-first fintech loan platform built with **React + TypeScript + T
 ## ✨ Features
 
 - **Splash Screen** – Animated logo with auto-redirect to Login
-- **Login Page** – Email + mobile validation with two-panel layout
-- **Home Page** – Hero banner, loan products, services, testimonials, CTA
-- **Personal Loan** – Benefits, eligibility, documents, FAQ accordion, Apply CTA
-- **Business Loan** – Business-themed layout with same sections
-- **Credit Tracker** – SVG score gauge, refresh animation, improvement tips, product modal
-- **Partners** – Tabbed lending/banking/digital partner cards
-- **About Us** – Stats, mission/vision/values, team
-- **Contact** – Contact form with validation + success state
-- **Privacy Policy** – Static sectioned content
-- **Terms & Conditions** – Static sectioned content
+- **Login Page** – Email & mobile validation within a sleek two-panel layout
+- **Home Page** – Hero banner, loan products, services, testimonials, and dynamic CTAs
+- **Personal & Business Loans** – Dedicated product pages highlighting benefits, eligibility, required documents, and interactive FAQ accordions
+- **Credit Tracker** – Interactive SVG score gauge, refresh animations, personalized improvement tips, dynamic product recommendations, and custom analytics visuals
+- **Partners** – Tabbed lending, banking, and digital partner directories
+- **About Us** – Key statistics, mission/vision/values, and team overview
+- **Contact** – Interactive contact form with comprehensive validation and success states
+- **Privacy Policy & Terms** – Static, sectioned content ensuring transparency and compliance
+- **Mobile-Optimized Navigation** – Fully responsive headers, seamless hamburger menus, and properly aligned notification icons for flawless mobile usability
 
 ## 🛠 Tech Stack
 
-| Tool | Version |
-|------|---------|
-| React | ^19 |
-| TypeScript | ~6.0 |
-| React Router DOM | ^7 |
-| Tailwind CSS | ^4 |
-| Axios | ^1 |
-| Lucide React | ^1 |
-| Vite | ^8 |
+| Tool | Version | Purpose |
+|------|---------|---------|
+| React | ^19 | Core UI Library |
+| TypeScript | ~6.0 | Static Typing |
+| React Router DOM | ^7 | Client-side Routing |
+| Tailwind CSS | ^4 | Utility-first Styling & Theming |
+| Axios | ^1 | API Client |
+| Lucide React | ^1 | Vector Iconography |
+| Vite | ^8 | Fast Build Tool & Dev Server |
 
 ## 📁 Folder Structure
 
 ```
 loan-platform/
-├── public/
+├── public/                # Static assets (custom logos, hero images)
 ├── src/
-│   ├── assets/
+│   ├── assets/            # App-specific SVGs and images
 │   ├── components/
-│   │   └── common/
-│   │       ├── Header.tsx
-│   │       └── Footer.tsx
-│   ├── data/
-│   │   ├── loans.ts
-│   │   └── partners.ts
-│   ├── layouts/
-│   │   └── MainLayout.tsx
-│   ├── pages/
-│   │   ├── Splash.tsx
-│   │   ├── Login.tsx
-│   │   ├── Home.tsx
-│   │   ├── PersonalLoan.tsx
-│   │   ├── BusinessLoan.tsx
-│   │   ├── CreditTracker.tsx
-│   │   ├── Partners.tsx
-│   │   ├── About.tsx
-│   │   ├── Contact.tsx
-│   │   ├── PrivacyPolicy.tsx
-│   │   └── Terms.tsx
-│   ├── routes/
-│   │   └── AppRoutes.tsx
-│   ├── services/
-│   │   └── api.ts
-│   ├── types/
-│   │   └── index.ts
-│   ├── App.tsx
-│   ├── main.tsx
-│   ├── index.css
-│   └── vite-env.d.ts
-├── index.html
-├── vite.config.ts
-├── tsconfig.json
-└── package.json
+│   │   └── common/        # Shared components (Header, Footer)
+│   ├── data/              # Mocked datasets (loans, partners, etc.)
+│   ├── layouts/           # Main application layouts
+│   ├── pages/             # Distinct route views (Home, Login, Splash, etc.)
+│   ├── routes/            # App routing logic
+│   ├── services/          # API config (Axios interceptors)
+│   ├── types/             # TypeScript interfaces
+│   ├── App.tsx            # Main application wrapper
+│   ├── main.tsx           # React DOM entry point
+│   └── index.css          # Global styles & Tailwind directives
+├── PROJECT_OVERVIEW.md    # Detailed architecture & business overview
+├── vite.config.ts         # Vite configuration
+└── package.json           # Dependencies and scripts
 ```
 
 ## 🚀 Getting Started
@@ -93,13 +71,14 @@ npm run preview
 
 ## 🎨 Design System
 
-| Token | Value |
-|-------|-------|
-| Primary | `#0F4C81` (Deep Blue) |
-| Secondary | `#1FA971` (Emerald Green) |
-| Accent | `#F5A623` (Gold) |
-| Background | `#F8FAFC` |
-| Font | Poppins (Google Fonts) |
+Fincera employs a meticulous design system defined via CSS variables for immediate consistency:
+- **Primary:** `#0F4C81` (Deep Blue)
+- **Secondary:** `#1FA971` (Emerald Green)
+- **Accent:** `#F5A623` (Gold)
+- **Background:** `#F8FAFC` (Light Slate)
+- **Font:** Poppins (Google Fonts)
+
+*Recent Updates:* Upgraded the platform logo across the Header, Footer, Splash, and Login pages to feature a custom brand icon, ensuring pixel-perfect layout integrity on mobile devices.
 
 ## 🔗 Routes
 
@@ -119,9 +98,12 @@ npm run preview
 
 ## 🔌 Future API Integration
 
-The `src/services/api.ts` file contains a pre-configured Axios instance with:
-- Auth token interceptor
+The `src/services/api.ts` file contains a pre-configured Axios instance featuring:
+- Auth token interceptors
 - Global error handling
-- Stub endpoints for all features
+- Stubbed endpoints for core features
 
-Set `VITE_API_BASE_URL` in `.env` to point to your backend.
+Set `VITE_API_BASE_URL` in `.env` to connect to your backend microservices.
+
+---
+*For a deeper dive into the technical architecture and business goals, see [PROJECT_OVERVIEW.md](./PROJECT_OVERVIEW.md).*

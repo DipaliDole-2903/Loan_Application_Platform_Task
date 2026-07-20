@@ -49,7 +49,7 @@ export default function Login() {
             <img 
               src="/image.png" 
               alt="Fincera Logo" 
-              className="w-20 h-20 object-contain rounded-2xl shadow-2xl bg-white/20"
+              className="w-20 h-20 object-contain rounded-2xl shadow-2xl bg-white/20 opacity-50"
               style={{ backdropFilter: 'blur(12px)', border: '1px solid rgba(255,255,255,0.3)' }}
             />
           </div>
@@ -84,7 +84,7 @@ export default function Login() {
             <img 
               src="/image.png" 
               alt="Fincera Logo" 
-              className="w-14 h-14 object-contain rounded-2xl shadow-lg bg-white/20"
+              className="w-14 h-14 object-contain rounded-2xl shadow-lg bg-white/20 opacity-50"
             />
             <span className="font-bold text-2xl" style={{ color: 'var(--color-primary)' }}>
               Fin<span style={{ color: 'var(--color-secondary)' }}>cera</span>

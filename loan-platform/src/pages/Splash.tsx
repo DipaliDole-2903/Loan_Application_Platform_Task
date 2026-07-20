@@ -38,7 +38,7 @@ export default function Splash() {
         <img 
           src="/image.png" 
           alt="Fincera Logo" 
-          className="w-28 h-28 object-contain rounded-3xl shadow-2xl mx-auto mb-6 animate-pulse-glow bg-white/20"
+          className="w-28 h-28 object-contain rounded-3xl shadow-2xl mx-auto mb-6 animate-pulse-glow bg-white/20 opacity-50"
           style={{ backdropFilter: 'blur(10px)', border: '1px solid rgba(255,255,255,0.3)' }}
         />
         <h1 className="text-5xl font-bold text-white mb-2">
